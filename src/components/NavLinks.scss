@@ -1,0 +1,27 @@
+.navigation {
+  display: flex;
+  margin-right: 4rem;
+  max-width: 32rem;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    align-items: center;
+
+    @media (max-width: 1414px) {
+      display: none;
+    }
+  }
+
+  &__item {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #000;
+    transition: color 0.4s ease;
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}

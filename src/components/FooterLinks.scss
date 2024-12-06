@@ -1,0 +1,39 @@
+.links {
+  display: flex;
+
+  &__container {
+    margin-right: 11.3rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 18px;
+    letter-spacing: 3px;
+    margin-bottom: 26px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 26px;
+    &-list {
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.6);
+      text-decoration: none;
+      line-height: 19px;
+      transition: color 0.4s ease;
+      &:hover {
+        color: #212529;
+      }
+    }
+  }
+}

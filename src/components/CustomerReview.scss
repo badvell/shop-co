@@ -1,0 +1,31 @@
+.container {
+  border: 1px solid hsla(0, 0%, 0%, 0.1);
+  border-radius: 20px;
+  padding: 28px;
+  max-width: 400px;
+
+  &__name {
+    display: flex;
+    gap: 4px;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 600;
+
+    &-img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 29%;
+  min-width: 0;
+}

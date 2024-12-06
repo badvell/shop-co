@@ -1,0 +1,127 @@
+.header {
+  display: flex;
+
+  &__banner {
+    font-size: 1.4rem;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    transition: all 0.4s ease;
+    z-index: 99;
+
+    &.visible {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      background-color: #000;
+      padding: 1rem 0;
+    }
+
+    span {
+      padding-left: 4px;
+      text-decoration: underline;
+      font-weight: 500;
+      cursor: pointer;
+      transition: color 0.4s ease;
+      &:hover {
+        color: #d6c9c9;
+      }
+    }
+  }
+
+  &__discount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 144rem;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 144rem;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 6.2rem 10rem 2.4rem;
+    transition: padding 0.3s ease;
+
+    &-menu {
+      display: none;
+
+      @media (max-width: 88.375rem) {
+        display: flex;
+      }
+    }
+
+    &-close {
+      padding: 2.4rem 10rem;
+    }
+  }
+
+  &__btn {
+    position: fixed;
+    right: 13.3rem;
+    border: none;
+    width: 20px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 15px;
+    margin-left: 40.25rem;
+    transition: all 0.7s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(228, 228, 228);
+    }
+
+    &-icon,
+    img {
+      position: relative;
+      margin-right: 1.4rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      transition: opacity 0.4s ease;
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+      &:hover {
+        opacity: 0.5;
+      }
+
+      span {
+        position: absolute;
+        top: -2px;
+        display: flex;
+        right: -6px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: red;
+        color: #fff;
+        text-align: center;
+        align-items: center;
+        padding: 2px;
+        font-size: 12px;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #fff;
+  background-color: rgba(8, 28, 21, 0.7);
+  z-index: 999;
+  width: 40%;
+  height: 100vh;
+}

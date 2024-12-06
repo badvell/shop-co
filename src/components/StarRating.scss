@@ -1,0 +1,16 @@
+.rating {
+  display: flex;
+
+  &__stars {
+    margin-right: 4px;
+  }
+
+  &__num {
+    font-size: 14px;
+    margin-left: 13px;
+
+    &-color {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}
