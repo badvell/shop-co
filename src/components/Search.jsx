@@ -28,6 +28,11 @@ const Search = () => {
     setResults(filteredProducts);
   };
 
+  const handleSearchClose = () => {
+    setQuery('');
+    setResults([]);
+  };
+
   return (
     <form className='search'>
       <input
@@ -53,11 +58,10 @@ const Search = () => {
             {results.map((product) => (
               <li key={product.id}>
                 <Link
-                  to={{
-                    pathname: `/product/${product.id}`,
-                    state: product,
-                  }}
+                  state={product}
+                  to={`/product/${product.id}`}
                   style={{ fontSize: '16px', textDecoration: 'none' }}
+                  onClick={handleSearchClose}
                 >
                   {product.title}
                 </Link>

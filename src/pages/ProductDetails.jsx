@@ -1,19 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import Button from '../components/Button';
 import Title from '../components/Title';
 import StarRating from '../components/StarRating';
+import ProductCardPrice from '../components/ProductCardPrice';
+import Test from '../components/Test';
+import ProductDetailsTabs from '../components/ProductDetailsTabs';
 
 import './ProductDetails.scss';
-import Test from '../components/Test';
 
 const ProductDetails = ({ onAddToCart }) => {
-  const [quantity, setQuantity] = useState(1);
   const [buttonText, setButtonText] = useState('Add to Cart');
+  const [quantity, setQuantity] = useState(1);
 
   const location = useLocation();
   const product = location.state;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const handleQuantityChange = (delta) => {
     setQuantity((prevQuantity) => Math.max(prevQuantity + delta, 1));
@@ -33,25 +39,35 @@ const ProductDetails = ({ onAddToCart }) => {
   };
 
   return (
-    <div className='details'>
-      <Title title={product.title} />
-      <StarRating maxRating={product.rating} />
-      <Test />
-      <h1>{product.title}</h1>
-      {/* <img src={product.img} alt={product.title} /> */}
-      <p>{product.title}</p>
-      <p>${product.newPrice}</p>
-      <p>{product.color}</p>
-      <p>{product.oldPrice}</p>
-      <div className='details__btn'>
-        <button onClick={() => handleQuantityChange(-1)}>–</button>
-        <span>{quantity}</span>
-        <button onClick={() => handleQuantityChange(1)}>+</button>
+    <>
+      <div className='details'>
+        <Test />
+
+        <div className='details__info'>
+          <Title
+            title={product.title}
+            fontSize='4rem'
+            textAlign='left'
+            marginBottom='0'
+          />
+          <StarRating maxRating={product.rating} />
+          <ProductCardPrice product={product} />
+          <p className='details__info-text'>{product.about}</p>
+
+          <div className='details__btn-wrapper'>
+            <div className='details__btn'>
+              <button onClick={() => handleQuantityChange(-1)}>–</button>
+              <span>{quantity}</span>
+              <button onClick={() => handleQuantityChange(1)}>+</button>
+            </div>
+            <Button maxWidth={400} onClick={handleAddToCart}>
+              {buttonText}
+            </Button>
+          </div>
+        </div>
       </div>
-      <Button maxWidth={400} onClick={handleAddToCart}>
-        {buttonText}
-      </Button>
-    </div>
+      <ProductDetailsTabs product={product} />
+    </>
   );
 };
 

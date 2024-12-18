@@ -41,33 +41,4 @@
     font-weight: 500;
     margin-bottom: 5px;
   }
-
-  &__price {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-  }
-
-  &__price-new {
-    padding-right: 10px;
-  }
-
-  &__price-old {
-    text-decoration: line-through;
-    color: hsla(0, 0%, 0%, 0.4);
-    padding-right: 10px;
-  }
-
-  &__discount {
-    display: flex;
-    justify-content: center;
-    font-weight: 500;
-    font-size: 12px;
-    max-width: 5.8rem;
-    width: 100%;
-    border-radius: 62px;
-    padding: 6px;
-    color: #ff3333;
-    background: hsla(0, 100%, 60%, 0.1);
-  }
 }

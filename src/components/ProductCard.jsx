@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from './StarRating';
 import Button from './Button';
+import ProductCardPrice from './ProductCardPrice';
 import PropTypes from 'prop-types';
 
 import './ProductCard.scss';
@@ -27,16 +28,7 @@ const ProductCard = ({ products, onProductClick }) => {
           </Link>
           <p className='card__title'>{product.title}</p>
           <StarRating maxRating={product.rating} />
-          <div className='card__price'>
-            <span className='card__price-new'>${product.newPrice}</span>
-            <span className='card__price-old'>
-              {product.oldPrice ? '$' : null}
-              {product.oldPrice}
-            </span>
-            <span className={product.discount ? 'card__discount' : null}>
-              {product.discount}
-            </span>
-          </div>
+          <ProductCardPrice product={product} />
         </div>
       ))}
 

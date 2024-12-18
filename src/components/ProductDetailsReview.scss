@@ -1,0 +1,29 @@
+.reviews {
+  &__filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    &-text {
+      font-size: 2.4em;
+      font-weight: 500;
+      margin-right: 7px;
+    }
+
+    &-subtext {
+      font-size: 1.6em;
+      line-height: 22px;
+      color: rgb(0, 0, 0, 0.6);
+    }
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    gap: 10px;
+  }
+}

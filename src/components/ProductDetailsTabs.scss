@@ -1,0 +1,72 @@
+.tab {
+  margin: 0 100px;
+
+  &__tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f0f0f0;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      line-height: 22px;
+      max-width: 41.4rem;
+      width: 100%;
+      color: rgb(0, 0, 0, 0.6);
+      cursor: pointer;
+      padding-bottom: 20px;
+      font-size: 2em;
+    }
+  }
+
+  .grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 610px);
+    gap: 20px;
+  }
+
+  .wrapper {
+    max-width: 610px;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 20px;
+
+    &__user {
+      font-size: 20px;
+      line-height: 22px;
+      margin: 20px 16px;
+    }
+
+    &__comment {
+      font-size: 16px;
+      line-height: 22px;
+      color: rgb(0, 0, 0, 0.6);
+      margin-bottom: 22px;
+    }
+
+    &__posted {
+      color: rgb(0, 0, 0, 0.6);
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .active {
+    font-weight: 500;
+    color: #000;
+    border-bottom: 2px solid #000;
+  }
+
+  .test {
+    max-width: 120px;
+    border: none;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 62px;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+  }
+}

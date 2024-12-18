@@ -42,7 +42,7 @@ const Home = ({ onAddToCart }) => {
         <BrandCarousel />
       </section>
 
-      <section className='product' id='product'>
+      <section className='product' id='new-arrivals'>
         <Title title='New Arrivals' />
         <ProductCard
           products={newArrivals}

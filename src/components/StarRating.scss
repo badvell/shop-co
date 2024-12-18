@@ -1,8 +1,12 @@
 .rating {
   display: flex;
+  align-items: center;
+  max-width: 150px;
+  gap: 5px;
 
   &__stars {
     margin-right: 4px;
+    height: 18px;
   }
 
   &__num {

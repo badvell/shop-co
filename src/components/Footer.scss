@@ -1,4 +1,5 @@
 .footer {
+  position: relative;
   margin-top: 17rem;
   background-color: #f0f0f0;
 
@@ -93,11 +94,11 @@
 }
 
 .newsletter {
-  position: relative;
   display: flex;
   justify-content: space-between;
-  left: 100px;
+  position: relative;
   top: -90px;
+  margin: 0 auto;
   background-color: #000;
   border-radius: 20px;
   max-width: 124rem;

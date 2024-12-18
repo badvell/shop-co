@@ -16,6 +16,7 @@ import './Header.scss';
 const Header = ({ cart }) => {
   const [saleShow, setSaleShow] = useState(true);
   const [menuIsOpen, SetMenuIsOpen] = useState(false);
+
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   const handleMenuOpen = () => {

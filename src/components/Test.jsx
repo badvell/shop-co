@@ -3,10 +3,8 @@ import newArrivals from '../helper/newArrivals';
 import topSelling from '../helper/topSelling';
 
 const Test = () => {
-  // Combine all products into a single array
   const products = [...newArrivals, ...topSelling];
 
-  // State to track selected product
   const [selectedProduct, setSelectedProduct] = useState(products[0]);
 
   return (
@@ -21,7 +19,9 @@ const Test = () => {
             style={{
               ...styles.thumbnailImage,
               border:
-                selectedProduct.id === product.id ? '2px solid blue' : 'none',
+                selectedProduct.id === product.id
+                  ? '1px solid rgb(0,0,0,.5)'
+                  : 'none',
             }}
             onClick={() => setSelectedProduct(product)}
           />

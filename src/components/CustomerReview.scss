@@ -1,11 +1,13 @@
 .container {
   border: 1px solid hsla(0, 0%, 0%, 0.1);
   border-radius: 20px;
-  padding: 28px;
-  max-width: 400px;
+  padding: 28px 32px;
+  max-width: 40rem;
+  height: 23.9rem;
 
   &__name {
     display: flex;
+    margin: 15px 0 12px;
     gap: 4px;
     font-size: 20px;
     line-height: 22px;
@@ -15,6 +17,12 @@
       width: 20px;
       height: 20px;
     }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 22px;
+    color: rgb(0, 0, 0, 0.5);
   }
 }
 
@@ -27,5 +35,7 @@
 }
 .embla__slide {
   flex: 0 0 29%;
+  max-width: 40rem;
+  margin-right: 20px;
   min-width: 0;
 }

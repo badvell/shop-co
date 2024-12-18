@@ -1,7 +1,7 @@
-import casual from '../assets/casual.jpg';
-import formal from '../assets/formal.jpg';
-import party from '../assets/party.jpg';
-import gym from '../assets/gym.jpg';
+import casual from '../assets/casual.png';
+import formal from '../assets/formal.png';
+import party from '../assets/party.png';
+import gym from '../assets/gym.png';
 
 const exploreImage = [
   {
