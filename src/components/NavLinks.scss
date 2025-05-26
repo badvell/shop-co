@@ -1,7 +1,12 @@
 .navigation {
   display: flex;
   margin-right: 4rem;
-  max-width: 32rem;
+  min-width: 32rem;
+
+  @media screen and (max-width: 1078px) {
+    display: none;
+    margin-right: 0;
+  }
 
   &__list {
     display: flex;
@@ -9,7 +14,11 @@
     gap: 24px;
     align-items: center;
 
-    @media (max-width: 1414px) {
+    li {
+      cursor: pointer;
+    }
+
+    @media (max-width: 1078px) {
       display: none;
     }
   }
@@ -23,5 +32,27 @@
     &:hover {
       color: rgba(0, 0, 0, 0.5);
     }
+
+    &-active {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      color: #fff;
+      font-size: 3.5rem;
+    }
+  }
+}
+
+.menu-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+
+  li {
+    max-width: 30rem;
+    list-style: none;
   }
 }

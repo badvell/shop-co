@@ -1,10 +1,21 @@
 .links {
   display: flex;
 
+  @media screen and (max-width: 758px) {
+    display: grid;
+    row-gap: 2.4rem;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+
   &__container {
     margin-right: 11.3rem;
     &:last-child {
       margin-right: 0;
+    }
+
+    @media screen and (max-width: 1252px) {
+      margin-right: 6rem;
     }
   }
 
@@ -15,6 +26,12 @@
     line-height: 18px;
     letter-spacing: 3px;
     margin-bottom: 26px;
+
+    @media screen and (max-width: 758px) {
+      margin-bottom: 16px;
+      font-size: 14px;
+      font-weight: 500;
+    }
   }
 
   &__list {

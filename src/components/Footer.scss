@@ -3,6 +3,18 @@
   margin-top: 17rem;
   background-color: #f0f0f0;
 
+  @media screen and (max-width: 1280px) {
+    padding: 0 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 0 16px;
+  }
+
+  @media screen and (max-width: 375px) {
+    margin-top: 10rem;
+  }
+
   &__content {
     display: flex;
     justify-content: space-between;
@@ -10,10 +22,19 @@
     padding-bottom: 50px;
     margin: 0 auto 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+    }
   }
 
   &__info {
     margin-right: 11.3rem;
+
+    @media screen and (max-width: 992px) {
+      margin: 0;
+      padding-bottom: 25px;
+    }
   }
 
   &__list {
@@ -55,6 +76,11 @@
     font-size: 14px;
     line-height: 22px;
     color: rgba(0, 0, 0, 0.6);
+
+    @media screen and (max-width: 992px) {
+      max-width: 35.7rem;
+      margin: 0 0 20px 0;
+    }
   }
 
   &__input {
@@ -85,10 +111,35 @@
     justify-content: space-between;
     padding-bottom: 8.2rem;
 
+    &-img {
+      width: 46px;
+      height: 30px;
+      padding: 6px;
+      background: white;
+      border-radius: 6px;
+      margin-right: 12px;
+
+      @media screen and (max-width: 668px) {
+        width: 40px;
+        height: 25px;
+        margin-right: 10px;
+      }
+    }
+
     &-text {
       max-width: 26.9rem;
       font-size: 14px;
       color: rgba(0, 0, 0, 0.6);
+    }
+
+    @media screen and (max-width: 856px) {
+      margin: 0;
+    }
+
+    @media screen and (max-width: 668px) {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
     }
   }
 }
@@ -102,20 +153,50 @@
   background-color: #000;
   border-radius: 20px;
   max-width: 124rem;
-  height: 18rem;
+  min-height: 18rem;
   padding: 36px 64px;
+
+  @media screen and (max-width: 1024px) {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  @media screen and (max-width: 830px) {
+    padding: 36px 32px;
+  }
+
+  @media screen and (max-width: 688px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media screen and (max-width: 436px) {
+    padding: 36px 24px;
+  }
 
   &__text {
     max-width: 53.1rem;
     font-size: 4rem;
+    align-self: center;
     font-weight: 600;
     line-height: 45px;
     color: #fff;
     text-transform: uppercase;
+
+    @media screen and (max-width: 830px) {
+      font-size: 3.2rem;
+      line-height: 35px;
+    }
   }
 
   &__container {
     position: relative;
+    max-width: 34.9rem;
+
+    @media screen and (max-width: 688px) {
+      max-width: 100%;
+    }
   }
 
   &__img {
@@ -137,6 +218,14 @@
     outline: none;
     &:focus {
       background-color: #f8f9fa;
+    }
+
+    @media screen and (max-width: 688px) {
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 425px) {
+      font-size: 1.4rem;
     }
   }
 }

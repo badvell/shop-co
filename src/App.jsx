@@ -19,33 +19,52 @@ const App = () => {
 
   const handleAddToCart = (product) => {
     setCart((prevItems) => {
-      const existingProduct = prevItems.find((item) => item.id === product.id);
+      const existingProduct = prevItems.find(
+        (item) =>
+          item.id === product.id &&
+          item.selectedColor === product.selectedColor &&
+          item.selectedSize === product.selectedSize
+      );
 
       if (existingProduct) {
         return prevItems.map((item) =>
-          item.id === product.id
+          item.id === product.id &&
+          item.selectedColor === product.selectedColor &&
+          item.selectedSize === product.selectedSize
             ? { ...item, quantity: item.quantity + product.quantity }
             : item
         );
+      } else {
+        return [...prevItems, product];
       }
-      return [...prevItems, product];
     });
   };
 
-  const updateQuantity = (productId, delta) => {
+  const updateQuantity = (id, selectedColor, selectedSize, newQuantity) => {
     setCart((prevItems) =>
       prevItems
         .map((item) =>
-          item.id === productId
-            ? { ...item, quantity: Math.max(item.quantity + delta, 0) }
+          item.id === id &&
+          item.selectedColor === selectedColor &&
+          item.selectedSize === selectedSize
+            ? { ...item, quantity: newQuantity }
             : item
         )
         .filter((item) => item.quantity > 0)
     );
   };
 
-  const removeFromCart = (productId) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+  const removeFromCart = (productId, selectedColor, selectedSize) => {
+    setCart((prevItems) =>
+      prevItems.filter(
+        (item) =>
+          !(
+            item.id === productId &&
+            item.selectedColor === selectedColor &&
+            item.selectedSize === selectedSize
+          )
+      )
+    );
   };
 
   const router = createBrowserRouter([

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 import newArrivals from '../helper/newArrivals';
@@ -9,8 +9,10 @@ import './Search.scss';
 const Search = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
 
   const allProducts = [...topSelling, ...newArrivals];
+  const inputRef = useRef(null);
 
   const handleSearch = (e) => {
     const searchQuery = e.target.value.toLowerCase();
@@ -31,46 +33,56 @@ const Search = () => {
   const handleSearchClose = () => {
     setQuery('');
     setResults([]);
+    setShowMobileSearch(false);
   };
 
+  useEffect(() => {
+    if (showMobileSearch) {
+      inputRef.current?.focus();
+    }
+  }, [showMobileSearch]);
+
   return (
-    <form className='search'>
+    <>
+      <form
+        className={`search ${showMobileSearch ? 'search__mobile-active' : ''}`}
+      >
+        <input
+          type='text'
+          placeholder='Search for products...'
+          value={query}
+          onChange={handleSearch}
+          ref={inputRef}
+        />
+        {results.length > 0 && (
+          <div className='search__results'>
+            <ul className='search__list'>
+              {results.map((product) => (
+                <li key={product.id}>
+                  <Link
+                    state={product}
+                    to={`/product/${product.id}`}
+                    onClick={handleSearchClose}
+                    className='search__link'
+                  >
+                    {product.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </form>
+
       <input
-        type='text'
-        placeholder='Search for products...'
-        value={query}
-        onChange={handleSearch}
+        className='search__toggle'
+        onClick={() => setShowMobileSearch(true)}
       />
-      {results.length > 0 && (
-        <div
-          style={{
-            position: 'absolute',
-            marginTop: '10px',
-            boxShadow: '6px 3px 3px #073b4c',
-            padding: '10px',
-            maxWidth: '577px',
-            width: '100%',
-            background: '#fff',
-            borderRadius: '5px',
-          }}
-        >
-          <ul style={{ listStyle: 'none' }}>
-            {results.map((product) => (
-              <li key={product.id}>
-                <Link
-                  state={product}
-                  to={`/product/${product.id}`}
-                  style={{ fontSize: '16px', textDecoration: 'none' }}
-                  onClick={handleSearchClose}
-                >
-                  {product.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+
+      {showMobileSearch && (
+        <div className='search__overlay' onClick={handleSearchClose} />
       )}
-    </form>
+    </>
   );
 };
 

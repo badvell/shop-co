@@ -1,12 +1,27 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  max-width: 29.5rem;
-  width: 100%;
-  margin-right: 2rem;
+  flex: 0 0 auto;
+  max-width: 295px;
+
+  a {
+    outline: none;
+  }
+
+  @media screen and (max-width: 809px) {
+    flex: 0 0 80%;
+  }
+
+  @media screen and (max-width: 600px) {
+    max-width: 19.8rem;
+  }
 
   &:nth-last-child(1) {
     margin-right: 0;
+  }
+
+  &__container {
+    @media screen and (max-width: 809px) {
+      padding-bottom: 8rem;
+    }
   }
 
   &__wrapper {
@@ -34,11 +49,33 @@
       border-radius: 20px;
       cursor: pointer;
     }
+
+    @media screen and (max-width: 600px) {
+      max-height: 20rem;
+    }
   }
 
   &__title {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 5px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 1.6em;
+    }
   }
+}
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 80%;
+  max-width: 295px;
 }

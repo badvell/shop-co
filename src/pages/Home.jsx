@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import Button from '../components/Button';
 import Counter from '../components/Counter';
@@ -10,7 +9,8 @@ import CustomerReview from '../components/CustomerReview';
 
 import newArrivals from '../helper/newArrivals';
 import topSelling from '../helper/topSelling';
-import exploreImage from '../helper/exploreImages';
+// import exploreImage from '../helper/exploreImages';
+import MainImage from '../assets/main.png';
 
 import './Home.scss';
 
@@ -27,15 +27,38 @@ const Home = ({ onAddToCart }) => {
 
   return (
     <>
+      {/* <section className='main'>
+        <div className='main__wrapper'>
+          <div className='main__text-wrapper'>
+            <h1 className='main__title'>
+              Find clothes that matches your style
+            </h1>
+            <p className='main__subtitle'>
+              Browse through our diverse range of meticulously crafted garments,
+              designed to bring out your individuality and cater to your sense
+              of style.
+            </p>
+            <Button>Shop Now</Button>
+            <Counter />
+          </div>
+        </div>
+      </section> */}
       <section className='main'>
-        <h1 className='main__text'>Find clothes that matches your style</h1>
-        <p className='main__subtext'>
-          Browse through our diverse range of meticulously crafted garments,
-          designed to bring out your individuality and cater to your sense of
-          style.
-        </p>
-        <Button>Shop Now</Button>
-        <Counter />
+        <div className='main__wrapper'>
+          <div className='main__content'>
+            <h1 className='main__title'>
+              Find clothes that matches your style
+            </h1>
+            <p className='main__subtitle'>
+              Browse through our diverse range of meticulously crafted garments,
+              designed to bring out your individuality and cater to your sense
+              of style.
+            </p>
+            <Button>Shop Now</Button>
+            <Counter />
+          </div>
+          <img src={MainImage} alt='' className='main__img' />
+        </div>
       </section>
 
       <section className='brands'>
@@ -61,7 +84,7 @@ const Home = ({ onAddToCart }) => {
         />
       </section>
 
-      <section className='explore'>
+      {/* <section className='explore'>
         <Title title='Browse by dress style' />
         <div className='explore__wrapper'>
           {exploreImage.map((card) => (
@@ -75,7 +98,7 @@ const Home = ({ onAddToCart }) => {
             </Link>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className='feedbacks'>
         <CustomerReview />

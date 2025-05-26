@@ -26,7 +26,8 @@ const Footer = () => {
           <Button
             color='#fff'
             colorText='#000'
-            maxWidth='34.9rem'
+            maxWidth='100%'
+            width='100%'
             marginBottom='0'
           >
             Subscribe to Newsletter
@@ -58,9 +59,14 @@ const Footer = () => {
           Shop.co &copy; {`2000-${new Date().getFullYear()}`}, All Rights
           Reserved
         </p>
-        <div className='footer__copyright-img'>
+        <div className='footer__copyright-wrapper'>
           {footerImagesPayment.map((image) => (
-            <img src={image.image} alt={image.alt} key={image.alt} />
+            <img
+              src={image.image}
+              alt={image.alt}
+              key={image.alt}
+              className='footer__copyright-img'
+            />
           ))}
         </div>
       </div>

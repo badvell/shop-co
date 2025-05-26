@@ -23,7 +23,7 @@ const CustomerReview = () => {
   return (
     <>
       <div className='feedbacks__wrapper'>
-        <Title title='Our happy customers' marginBottom='0' />
+        <Title title='Our happy customers' marginBottom='0' maxWidth={true} />
         <button
           type='button'
           className='feedbacks__btn feedbacks__btn-left'

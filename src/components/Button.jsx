@@ -6,6 +6,8 @@ const Button = ({
   colorText,
   border,
   maxWidth,
+  width,
+  marginTop,
   marginBottom,
   onClick,
 }) => {
@@ -14,7 +16,9 @@ const Button = ({
     color: colorText,
     border: border,
     maxWidth: maxWidth,
+    marginTop: marginTop,
     marginBottom: marginBottom,
+    width: width,
   };
 
   return (

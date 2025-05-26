@@ -1,3 +1,5 @@
+import './ProductDetailsAbout.scss';
+
 const ProductDetailsAbout = () => {
   return (
     <div className='tabs__content_details'>

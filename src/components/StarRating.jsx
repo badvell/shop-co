@@ -3,7 +3,7 @@ import starIconHalf from '../assets/star-icon-half.svg';
 
 import './StarRating.scss';
 
-const StarRating = ({ maxRating = 5, showText = true }) => {
+const StarRating = ({ maxRating = 5, starSize = 18, showText = true }) => {
   const renderStars = () => {
     const stars = Array.from(
       { length: Math.min(Math.ceil(maxRating)) },
@@ -16,8 +16,8 @@ const StarRating = ({ maxRating = 5, showText = true }) => {
               key={i}
               src={starIcon}
               alt='Full Star'
-              width='18'
-              height='18'
+              width={starSize}
+              height={starSize}
             />
           );
         } else if (maxRating >= starValue - 0.5) {
@@ -26,8 +26,8 @@ const StarRating = ({ maxRating = 5, showText = true }) => {
               key={i}
               src={starIconHalf}
               alt='Half Star'
-              width='18'
-              height='18'
+              width={starSize}
+              height={starSize}
             />
           );
         }

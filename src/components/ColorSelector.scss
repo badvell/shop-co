@@ -1,0 +1,28 @@
+.color__selector {
+  &-text {
+    font-size: 1.6em;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 2rem 0 2.4rem;
+  }
+}
+
+.color__content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.color__button {
+  height: 30px;
+  width: 30px;
+  border: none;
+  background-color: #4f4631;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+
+  span {
+    background-image: url(../assets/stick-icon.svg);
+  }
+}

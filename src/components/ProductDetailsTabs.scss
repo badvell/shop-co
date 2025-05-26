@@ -1,29 +1,53 @@
 .tab {
-  margin: 0 100px;
+  margin: 5rem 10rem;
+
+  @media screen and (max-width: 1078px) {
+    margin: 5rem 3rem;
+  }
+
+  @media screen and (max-width: 928px) {
+    margin: 0 3rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 0 1.6rem;
+  }
 
   &__tabs {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     border-bottom: 1px solid #f0f0f0;
+
+    @media screen and (max-width: 1078px) {
+      justify-content: space-between;
+    }
 
     &-item {
       display: flex;
       justify-content: center;
       line-height: 22px;
-      max-width: 41.4rem;
-      width: 100%;
+      max-width: 15.4rem;
       color: rgb(0, 0, 0, 0.6);
       cursor: pointer;
       padding-bottom: 20px;
       font-size: 2em;
+
+      @media screen and (max-width: 768px) {
+        font-size: 1.6em;
+      }
     }
   }
 
   .grid {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(2, 610px);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+
+    @media screen and (max-width: 658px) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 16px;
+    }
   }
 
   .wrapper {
@@ -35,38 +59,38 @@
     &__user {
       font-size: 20px;
       line-height: 22px;
-      margin: 20px 16px;
+      padding: 20px 0 15px;
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 22px;
+      color: rgb(0, 0, 0, 0.6);
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
 
     &__comment {
-      font-size: 16px;
-      line-height: 22px;
-      color: rgb(0, 0, 0, 0.6);
       margin-bottom: 22px;
-    }
-
-    &__posted {
-      color: rgb(0, 0, 0, 0.6);
-      font-size: 16px;
-      line-height: 22px;
     }
   }
 
   .active {
+    max-width: 41.4rem;
+    width: 100%;
     font-weight: 500;
     color: #000;
     border-bottom: 2px solid #000;
-  }
 
-  .test {
-    max-width: 120px;
-    border: none;
-    padding: 15px;
-    background-color: #f0f0f0;
-    border-radius: 62px;
-    font-size: 16px;
-    font-weight: 500;
-    outline: none;
-    cursor: pointer;
+    @media screen and (max-width: 768px) {
+      max-width: 12.3rem;
+    }
+
+    @media screen and (max-width: 411px) {
+      width: auto;
+    }
   }
 }

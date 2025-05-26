@@ -4,8 +4,9 @@ import ProductDetailsAbout from './ProductDetailsAbout';
 import ProductDetailsReview from './ProductDetailsReview';
 import ProductDetailsFaqs from './ProductDetailsFaqs';
 import Title from '../components/Title';
-import { suggestions } from '../helper/suggestions';
 import ProductCard from './ProductCard';
+
+import { suggestions } from '../helper/suggestions';
 
 import './ProductDetailsTabs.scss';
 
@@ -18,11 +19,9 @@ const ProductDetailsTabs = ({ product }) => {
         <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
 
-      <div className=''>
-        {activeTab === 'details' && <ProductDetailsAbout product={product} />}
-        {activeTab === 'reviews' && <ProductDetailsReview product={product} />}
-        {activeTab === 'faqs' && <ProductDetailsFaqs product={product} />}
-      </div>
+      {activeTab === 'details' && <ProductDetailsAbout product={product} />}
+      {activeTab === 'reviews' && <ProductDetailsReview product={product} />}
+      {activeTab === 'faqs' && <ProductDetailsFaqs product={product} />}
 
       <Title title='You might also like' />
       <ProductCard products={suggestions} />

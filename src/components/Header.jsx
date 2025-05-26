@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Search from './Search';
 import NavLinks from './NavLinks';
@@ -15,25 +15,42 @@ import './Header.scss';
 
 const Header = ({ cart }) => {
   const [saleShow, setSaleShow] = useState(true);
-  const [menuIsOpen, SetMenuIsOpen] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [pageScrolled, setPageScrolled] = useState(false);
 
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
-  const handleMenuOpen = () => {
-    SetMenuIsOpen((open) => !open);
+  const handleMenuToggle = () => {
+    setMenuIsOpen((open) => !open);
     document.body.classList.toggle('screen-fix');
   };
 
   const handleSaleShow = () => {
-    setSaleShow(false);
+    setSaleShow(!saleShow);
   };
 
+  const closeMenu = () => {
+    setMenuIsOpen(false);
+    document.body.classList.remove('screen-fix');
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY > 0 ? setPageScrolled(true) : setPageScrolled(false);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className='header'>
+    <header className={`header ${pageScrolled ? 'header__scrolled' : ''}`}>
       <div className={`header__banner ${saleShow ? 'visible' : ''}`}>
         {saleShow && (
           <div className='header__discount'>
-            <p>
+            <p className='header__discount-text'>
               Sign up and get 20% off to your first order.
               <span>Sign Up Now</span>
             </p>
@@ -46,15 +63,29 @@ const Header = ({ cart }) => {
       <div
         className={`header__wrapper ${saleShow ? '' : 'header__wrapper-close'}`}
       >
-        <div className={menuIsOpen ? 'open' : 'header__wrapper-menu'}>
+        <div className={`header__wrapper-menu ${menuIsOpen ? 'open' : ''}`}>
           {menuIsOpen ? (
-            <VscChromeClose size={24} onClick={handleMenuOpen} />
+            <button
+              style={{ top: saleShow ? '74px' : '39px' }}
+              type='button'
+              className='open__btn open__btn-close'
+            >
+              <VscChromeClose size={24} onClick={handleMenuToggle} />
+            </button>
           ) : (
-            <FiMenu size={24} onClick={handleMenuOpen} />
+            <button
+              style={{ top: saleShow ? '74px' : '39px' }}
+              type='button'
+              className='open__btn open__btn-open'
+            >
+              <FiMenu size={24} onClick={handleMenuToggle} />
+            </button>
           )}
-          {menuIsOpen && <NavLinks menuIsOpen={menuIsOpen} />}
+          {menuIsOpen && (
+            <NavLinks menuIsOpen={menuIsOpen} isCloseMenu={closeMenu} />
+          )}
         </div>
-        <Logo />
+        <Logo className='header__logo' />
         <NavLinks />
         <Search />
         <Link to='/cart' className='header__btn-icon'>
