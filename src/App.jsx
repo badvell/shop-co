@@ -76,15 +76,15 @@ const App = () => {
           element: <Home />,
         },
         {
-          path: '/product/:productId',
+          path: 'product/:productId',
           element: <ProductDetails onAddToCart={handleAddToCart} />,
         },
         {
-          path: '/category',
+          path: 'category',
           element: <Category />,
         },
         {
-          path: '/cart',
+          path: 'cart',
           element: (
             <Cart
               cartItems={cart}
@@ -94,19 +94,19 @@ const App = () => {
           ),
         },
         {
-          path: '/casual',
+          path: 'casual',
           element: <Casual />,
         },
         {
-          path: '/formal',
+          path: 'formal',
           element: <Formal />,
         },
         {
-          path: '/party',
+          path: 'party',
           element: <Party />,
         },
         {
-          path: '/gym',
+          path: 'gym',
           element: <Gym />,
         },
       ],
