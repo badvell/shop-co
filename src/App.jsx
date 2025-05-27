@@ -67,52 +67,55 @@ const App = () => {
     );
   };
 
-  const router = createBrowserRouter([
-    {
-      element: <AppLayout cart={cart} />,
-      children: [
-        {
-          path: '/',
-          element: <Home />,
-        },
-        {
-          path: 'product/:productId',
-          element: <ProductDetails onAddToCart={handleAddToCart} />,
-        },
-        {
-          path: 'category',
-          element: <Category />,
-        },
-        {
-          path: 'cart',
-          element: (
-            <Cart
-              cartItems={cart}
-              updateQuantity={updateQuantity}
-              onRemoveFromCart={removeFromCart}
-            />
-          ),
-        },
-        {
-          path: 'casual',
-          element: <Casual />,
-        },
-        {
-          path: 'formal',
-          element: <Formal />,
-        },
-        {
-          path: 'party',
-          element: <Party />,
-        },
-        {
-          path: 'gym',
-          element: <Gym />,
-        },
-      ],
-      errorElement: <Error />,
-    },
-  ]);
+  const router = createBrowserRouter(
+    [
+      {
+        element: <AppLayout cart={cart} />,
+        children: [
+          {
+            path: '/',
+            element: <Home />,
+          },
+          {
+            path: 'product/:productId',
+            element: <ProductDetails onAddToCart={handleAddToCart} />,
+          },
+          {
+            path: 'category',
+            element: <Category />,
+          },
+          {
+            path: 'cart',
+            element: (
+              <Cart
+                cartItems={cart}
+                updateQuantity={updateQuantity}
+                onRemoveFromCart={removeFromCart}
+              />
+            ),
+          },
+          {
+            path: 'casual',
+            element: <Casual />,
+          },
+          {
+            path: 'formal',
+            element: <Formal />,
+          },
+          {
+            path: 'party',
+            element: <Party />,
+          },
+          {
+            path: 'gym',
+            element: <Gym />,
+          },
+        ],
+        errorElement: <Error />,
+      },
+    ],
+    { basename: '/shop-co' }
+  );
 
   return (
     <>

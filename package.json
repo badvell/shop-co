@@ -1,5 +1,7 @@
 {
+  "name": "shop-co",
   "private": true,
+  "homepage": "https://badvell.github.io/shop-co",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
