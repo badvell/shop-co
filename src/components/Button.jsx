@@ -9,6 +9,7 @@ const Button = ({
   width,
   marginTop,
   marginBottom,
+  alignSelf,
   onClick,
 }) => {
   const buttonStyle = {
@@ -19,6 +20,7 @@ const Button = ({
     marginTop: marginTop,
     marginBottom: marginBottom,
     width: width,
+    alignSelf: alignSelf,
   };
 
   return (

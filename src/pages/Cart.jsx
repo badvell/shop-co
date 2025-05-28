@@ -15,12 +15,6 @@ const Cart = ({ cartItems, updateQuantity, onRemoveFromCart }) => {
     0
   );
 
-  // const totalPrice = cartItems.reduce((total, item) => {
-  //   const discount = item.discount ? (item.newPrice * item.discount) / 100 : 0;
-  //   const itemTotal = (item.newPrice - discount) * item.quantity;
-  //   return total + itemTotal;
-  // }, 0);
-
   const finalPrice = totalPrice + deliveryFee;
 
   return (

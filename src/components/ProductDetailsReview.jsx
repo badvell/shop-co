@@ -65,6 +65,7 @@ const ProductDetailsReview = ({ product }) => {
             color='#fff'
             colorText='#000'
             border='1px solid rgb(0, 0, 0, .1)'
+            alignSelf='center'
             onClick={loadMoreReviews}
           >
             Load More Reviews

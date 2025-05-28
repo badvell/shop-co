@@ -202,7 +202,8 @@
   &__img {
     position: absolute;
     left: 18px;
-    transform: translateY(100%);
+    top: 18px;
+    // transform: translateY(100%);
     width: 20px;
     height: 15px;
   }
